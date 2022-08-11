@@ -1,9 +1,9 @@
 {
-    "name": "infyomlabs/purecss-templates",
+    "name": "skys215/purecss-templates",
     "type": "library",
-    "description": "PureCSS templates for InfyOm Laravel Generator",
+    "description": "PureCSS templates for Skys215 Laravel Generator",
     "keywords": [
-        "infyom",
+        "skys215",
         "laravel",
         "generator",
         "purecss",
@@ -25,22 +25,16 @@
     },
     "autoload": {
         "psr-4": {
-            "InfyOm\\PureCSSTemplates\\": "src/"
+            "Skys215\\PureCSSTemplates\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "\\InfyOm\\PureCSSTemplates\\PureCSSTemplatesServiceProvider"
+                "\\Skys215\\PureCSSTemplates\\PureCSSTemplatesServiceProvider"
             ]
         }
     },
-    "funding": [
-        {
-            "type": "opencollective",
-            "url": "https://opencollective.com/infyomlabs"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
