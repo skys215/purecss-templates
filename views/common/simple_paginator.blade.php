@@ -1,26 +1,30 @@
 @if ($paginator->hasPages())
-    <ul class="pagination m-0">
-        {{-- Previous Page Link --}}
-        @if ($paginator->onFirstPage())
-            <li class="page-item disabled" aria-disabled="true">
-                <span class="page-link">@lang('pagination.previous')</span>
-            </li>
-        @else
-            <li class="page-item">
-                <a class="page-link" href="{{ $paginator->previousPageUrl() }}"
-                   rel="prev">@lang('pagination.previous')</a>
-            </li>
-        @endif
+    <div class="navigation">
+        <div class="pure-button-group">
+            {{-- Previous Page Link --}}
+            @if (!$paginator->onFirstPage())
+                <a class="pure-button" href="{{ $paginator->previousPageUrl() }}" rel="prev"
+                       aria-label="@lang('pagination.previous')">
+                    @if($config->options->localized)
+                        @@lang('pagination.previous')
+                    @else
+                        Prev
+                    @endif
+               </a>
+            @endif
 
-        {{-- Next Page Link --}}
-        @if ($paginator->hasMorePages())
-            <li class="page-item">
-                <a class="page-link" href="{{ $paginator->nextPageUrl() }}" rel="next">@lang('pagination.next')</a>
-            </li>
-        @else
-            <li class="page-item disabled" aria-disabled="true">
-                <span class="page-link">@lang('pagination.next')</span>
-            </li>
-        @endif
-    </ul>
+            {{-- Next Page Link --}}
+            @if ($paginator->hasMorePages())
+                <a href="{{ $paginator->nextPageUrl() }}" rel="next"
+                       aria-label="@lang('pagination.next')">
+                    @if($config->options->localized)
+                        @@lang('pagination.next')
+                    @else
+                        Next
+                    @endif
+               </a>
+            @endif
+        </div>
+    </div>
 @endif
+

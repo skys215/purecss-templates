@@ -16,12 +16,24 @@
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
                         <a href="{!! route('users.show', [$user->id]) !!}" class='btn btn-default btn-xs'>
-                            <i class="fa fa-eye"></i>
+                            @if($config->options->localized)
+@@lang('crud.detail')
+@else
+    View
+@endif
                         </a>
                         <a href="{!! route('users.edit', [$user->id]) !!}" class='btn btn-default btn-xs'>
-                            <i class="fa fa-edit"></i>
+                            @if($config->options->localized)
+@@lang('crud.edit')
+@else
+    Edit
+@endif
                         </a>
-                        {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        {!! Form::button(@if($config->options->localized)
+__('crud.delete')
+@else
+    'Delete'
+@endif, ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>
                     {!! Form::close() !!}
                 </td>

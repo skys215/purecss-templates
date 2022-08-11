@@ -1,12 +1,22 @@
-<div class='btn-group'>
-    <a href="{{ $showUrl }}" class='btn btn-default btn-xs'>
-        <i class="fa fa-eye"></i>
-    </a>
-    <a href="{{ $editUrl }}" class='btn btn-default btn-xs'>
-        <i class="fa fa-edit"></i>
-    </a>
-    <a class='btn btn-danger btn-xs' wire:click="deleteRecord({{ $recordId }})"
-       onclick="confirm('Are you sure you want to remove this Record?') || event.stopImmediatePropagation()">
-        <i class="fa fa-trash"></i>
-    </a>
-</div>
+<a href="{{ $showUrl }}" class='pure-button button-small button-secondary'>
+    @if($config->options->localized)
+@@lang('crud.detail')
+@else
+    View
+@endif
+</a>
+<a href="{{ $editUrl }}" class='pure-button button-small button-success'>
+    @if($config->options->localized)
+@@lang('crud.edit')
+@else
+    Edit
+@endif
+</a>
+<a class='pure-button button-small button-error' wire:click="deleteRecord({{ $recordId }})"
+   onclick="confirm('Are you sure you want to remove this Record?') || event.stopImmediatePropagation()">
+    @if($config->options->localized)
+__('crud.delete')
+@else
+    'Delete'
+@endif
+</a>

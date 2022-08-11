@@ -1,12 +1,12 @@
 <?php
 
-namespace InfyOm\AdminLTETemplates;
+namespace InfyOm\PureCSSTemplates;
 
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
-class AdminLTETemplatesServiceProvider extends ServiceProvider
+class PureCSSTemplatesServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -15,17 +15,17 @@ class AdminLTETemplatesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../views', 'adminlte-templates');
+        $this->loadViewsFrom(__DIR__.'/../views', 'purecss-templates');
         $this->publishes([
-            __DIR__.'/../views/common' => resource_path('views/vendor/adminlte-templates/common'),
-        ], 'adminlte-views');
+            __DIR__.'/../views/common' => resource_path('views/vendor/purecss-templates/common'),
+        ], 'purecss-views');
 
         $this->publishes([
-            __DIR__.'/../views/templates' => resource_path('views/vendor/adminlte-templates/templates'),
-        ], 'adminlte-templates');
+            __DIR__.'/../views/templates' => resource_path('views/vendor/purecss-templates/templates'),
+        ], 'purecss-templates');
 
-        Paginator::defaultView('adminlte-templates::common.paginator');
-        Paginator::defaultSimpleView('adminlte-templates::common.simple_paginator');
+        Paginator::defaultView('purecss-templates::common.paginator');
+        Paginator::defaultSimpleView('purecss-templates::common.simple_paginator');
 
         Blade::directive('ocb', function () {
             return '<?php echo "{{ " ?>';

@@ -1,9 +1,9 @@
 @if(!empty($errors))
     @if($errors->any())
-        <ul class="alert alert-danger" style="list-style-type: none">
-            @foreach($errors->all() as $error)
-                <li>{!! $error !!}</li>
-            @endforeach
-        </ul>
+        @foreach($errors->all() as $error)
+            <aside class="pure-message message-error">
+                <p><strong>ERROR</strong>: {!! $error !!}</p>
+            </aside>
+        @endforeach
     @endif
 @endif

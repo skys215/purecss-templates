@@ -1,18 +1,18 @@
 <h1 align="center"><img src="https://assets.infyom.com/open-source/infyom-logo.png" alt="InfyOm"></h1>
 
-AdminLTE Templates for InfyOm Laravel Generator
+PureCSS Templates for InfyOm Laravel Generator
 ================================================
 
-[![Total Downloads](https://poser.pugx.org/infyomlabs/adminlte-templates/downloads)](https://packagist.org/packages/infyomlabs/adminlte-templates)
-[![Monthly Downloads](https://poser.pugx.org/infyomlabs/adminlte-templates/d/monthly)](https://packagist.org/packages/infyomlabs/adminlte-templates)
-[![Daily Downloads](https://poser.pugx.org/infyomlabs/adminlte-templates/d/daily)](https://packagist.org/packages/infyomlabs/adminlte-templates)
-[![License](https://poser.pugx.org/infyomlabs/adminlte-templates/license)](https://packagist.org/packages/infyomlabs/adminlte-templates)
+[![Total Downloads](https://poser.pugx.org/infyomlabs/purecss-templates/downloads)](https://packagist.org/packages/infyomlabs/purecss-templates)
+[![Monthly Downloads](https://poser.pugx.org/infyomlabs/purecss-templates/d/monthly)](https://packagist.org/packages/infyomlabs/purecss-templates)
+[![Daily Downloads](https://poser.pugx.org/infyomlabs/purecss-templates/d/daily)](https://packagist.org/packages/infyomlabs/purecss-templates)
+[![License](https://poser.pugx.org/infyomlabs/purecss-templates/license)](https://packagist.org/packages/infyomlabs/purecss-templates)
 
-Templates for [AdminLTE Theme](https://adminlte.io/) for InfyOm Laravel Generator.  
+Templates for [PureCSS Theme](https://purecss.io/) for InfyOm Laravel Generator.  
 
 ## Documentation
 
-Read [Documentation](https://infyom.com/open-source/laravelgenerator/docs/8.0/adminlte-templates) for detailed installation steps and usage.
+Read [Documentation](https://infyom.com/open-source/laravelgenerator/docs/8.0/purecss-templates) for detailed installation steps and usage.
 
 ## Support Us
 

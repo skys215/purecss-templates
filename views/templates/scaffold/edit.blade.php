@@ -1,43 +1,22 @@
 @@extends('layouts.app')
 
+@@section('title')
+    @if($config->options->localized)
+        @@lang('crud.edit') @@lang('models/{!! $config->modelNames->camelPlural !!}.singular')
+    @else
+        Edit {{ $config->modelNames->human }}
+    @endif
+@@endsection
+
 @@section('content')
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-12">
-                    <h1>
-@if($config->options->localized)
-                        @@lang('crud.edit') @@lang('models/{!! $config->modelNames->camelPlural !!}.singular')
-@else
-                        Edit {{ $config->modelNames->human }}
-@endif
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </section>
+    @@include('purecss-templates::common.errors')
 
-    <div class="content px-3">
+    @{!! Form::model(${{ $config->modelNames->camel }}, ['route' => ['{{ $config->prefixes->getRoutePrefixWith('.') }}{{ $config->modelNames->camelPlural }}.update', ${{ $config->modelNames->camel }}->{{ $config->primaryName }}], 'method' => 'patch', 'class' => 'pure-form pure-form-stacked']) !!}
 
-        @@include('adminlte-templates::common.errors')
+    @@include('{{ $config->prefixes->getViewPrefixForInclude() }}{{ $config->modelNames->snakePlural }}.fields')
 
-        <div class="card">
+    @{!! Form::submit('Save', ['class' => 'pure-button button-small button-success']) !!}
+    <a href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural !!}.index') }}" class="pure-button button-small button-secondary">@if($config->options->localized) @@lang('crud.cancel') @else Cancel @endif</a>
 
-            @{!! Form::model(${{ $config->modelNames->camel }}, ['route' => ['{{ $config->prefixes->getRoutePrefixWith('.') }}{{ $config->modelNames->camelPlural }}.update', ${{ $config->modelNames->camel }}->{{ $config->primaryName }}], 'method' => 'patch']) !!}
-
-            <div class="card-body">
-                <div class="row">
-                    @@include('{{ $config->prefixes->getViewPrefixForInclude() }}{{ $config->modelNames->snakePlural }}.fields')
-                </div>
-            </div>
-
-            <div class="card-footer">
-                @{!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural !!}.index') }}" class="btn btn-default">@if($config->options->localized) @@lang('crud.cancel') @else Cancel @endif</a>
-            </div>
-
-            @{!! Form::close() !!}
-
-        </div>
-    </div>
+    @{!! Form::close() !!}
 @@endsection

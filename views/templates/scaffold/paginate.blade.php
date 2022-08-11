@@ -1,1 +1,1 @@
-@@include('adminlte-templates::common.paginate', ['records' => ${!! $config->modelNames->camelPlural !!}])
+@@include('purecss-templates::common.paginate', ['records' => ${!! $config->modelNames->camelPlural !!}])
