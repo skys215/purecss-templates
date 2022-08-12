@@ -1,6 +1,6 @@
 <?php
 
-namespace InfyOm\PureCSSTemplates;
+namespace Skys215\PureCSSTemplates;
 
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
