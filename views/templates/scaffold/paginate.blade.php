@@ -1,0 +1,1 @@
+@@include('purecss-templates::common.paginate', ['records' => ${!! $config->modelNames->camelPlural !!}])

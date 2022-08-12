@@ -1,3 +1,2 @@
-<div class="row">
-    {!! $records->render() !!}
-</div>
+
+{!! $records->links() !!}
