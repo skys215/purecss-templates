@@ -33,11 +33,11 @@
 @endif
                         </a>
                         @{!! Form::button(@if($config->options->localized)
-__('crud.delete')
+@@lang('crud.delete')
 @else
     'Delete'
 @endif, ['type' => 'submit', 'class' => 'pure-button button-small button-error', 'onclick' => "return confirm(@if($config->options->localized)
-__('crud.are_you_sure')
+@@lang('crud.are_you_sure')
 @else
     'Are you sure?'
 @endif)"]) !!}
