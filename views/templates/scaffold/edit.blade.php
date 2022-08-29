@@ -15,7 +15,7 @@
 
     @@include('{{ $config->prefixes->getViewPrefixForInclude() }}{{ $config->modelNames->snakePlural }}.fields')
 
-    @{!! Form::submit(@if($config->options->localized) @@lang('crud.save') @else 'Save' @endif, ['class' => 'pure-button button-small button-success']) !!}
+    @{!! Form::submit(@if($config->options->localized) __('crud.save') @else 'Save' @endif, ['class' => 'pure-button button-small button-success']) !!}
     <a href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural !!}.index') }}" class="pure-button button-small button-secondary">@if($config->options->localized) @@lang('crud.cancel') @else Cancel @endif</a>
 
     @{!! Form::close() !!}
