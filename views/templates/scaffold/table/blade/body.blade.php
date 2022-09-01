@@ -14,7 +14,7 @@
         @@foreach(${{ $config->modelNames->camelPlural }} as ${{ $config->modelNames->camel }})
             <tr>
                 {!! $fieldBody !!}
-                <td style="width: 120px">
+                <td style="width: 220px">
                     @{!! Form::open(['route' => ['{{ $config->prefixes->getRoutePrefixWith('.') }}{{ $config->modelNames->camelPlural }}.destroy', ${{ $config->modelNames->camel }}->{{ $config->primaryName }}], 'method' => 'delete']) !!}
                         <a href="@{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural !!}.show', [${!! $config->modelNames->camel !!}->{!! $config->primaryName !!}]) }}"
                            class='pure-button button-small button-secondary'>
@@ -33,14 +33,14 @@
 @endif
                         </a>
                         @{!! Form::button(@if($config->options->localized)
-@@lang('crud.delete')
+__('crud.delete')
 @else
     'Delete'
-@endif, ['type' => 'submit', 'class' => 'pure-button button-small button-error', 'onclick' => "return confirm(@if($config->options->localized)
-@@lang('crud.are_you_sure')
+@endif, ['type' => 'submit', 'class' => 'pure-button button-small button-error', 'onclick' => "return confirm(@if($config->options->localized)".
+__('crud.are_you_sure')
 @else
-    'Are you sure?'
-@endif)"]) !!}
+    "'Are you sure?'"
+@endif.')']) !!}
                     @{!! Form::close() !!}
                 </td>
             </tr>
